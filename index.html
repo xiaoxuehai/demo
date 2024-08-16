@@ -1,0 +1,38 @@
+<!--
+ * @Author: 肖 学海 1379228273@qq.com
+ * @Date: 2022-12-27 09:05:59
+ * @LastEditors: 肖 学海 1379228273@qq.com
+ * @LastEditTime: 2023-01-05 14:14:59
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link
+    rel="icon"
+    type="image/png"
+    href="/logo.png"
+  />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <script src="/_app.config.js"></script>
+</head>
+
+<body arco-theme="dark">
+  <div id="root"></div>
+  <script
+    type="module"
+    src="/src/main.tsx"
+  ></script>
+  <script>
+    if(window.__APP_CONFIG__ && window.__APP_CONFIG__.VITE_APP_TITLE){
+      document.title = window.__APP_CONFIG__.VITE_APP_TITLE
+    }
+  </script>
+</body>
+
+</html>

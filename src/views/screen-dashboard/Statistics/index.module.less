@@ -1,0 +1,35 @@
+.card {
+    background-color: rgba(19, 25, 47, 0.6);
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ 
+    .name{
+        font-size: 20px;
+        color: #257DFF;
+    }
+    .value{
+        font-size: 28px;
+        font-weight: bolder;
+        background: linear-gradient(to bottom,#fff,#4db6e5);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+}
+.card-list {
+    height: 100%;
+    width: 100%;
+	flex-shrink: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.card-content {
+	padding: 10px;
+	width: 33.33%;
+    height: 50%;
+    box-sizing: border-box;
+}
