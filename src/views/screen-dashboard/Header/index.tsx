@@ -11,12 +11,12 @@ import {
 	Decoration6
 } from '@jiaminghi/data-view-react';
 import styles from './index.module.less';
-import cs from 'classnames';
 import { FC, useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import { getAppEnvConfig } from '@/utils/env';
 import { Select } from '@arco-design/web-react';
 import { StoreItem } from '@/api/index.model';
+import { cn } from '@/lib/cn';
 type HeaderProps = {
 	storeValue: number;
 	storeChnage: (value: number) => void;
@@ -38,7 +38,7 @@ const Header: FC<HeaderProps> = props => {
 	return (
 		<div className={styles.header}>
 			<Decoration10 className={styles.Decoration10} />
-			<div className={cs(styles.trapezium, styles.store)}>
+			<div className={cn(styles.trapezium, styles.store)}>
 				<span className={styles.text}>
 					<span className={styles['store-title']}>当前门店：</span>
 					<Select
@@ -83,9 +83,9 @@ const Header: FC<HeaderProps> = props => {
 					color={['#568aea', '#000000']}
 				/>
 			</div>
-			<Decoration10 className={cs(styles.Decoration10, styles.reverse)} />
+			<Decoration10 className={cn(styles.Decoration10, styles.reverse)} />
 
-			<div className={cs(styles.trapezium, styles.time)}>
+			<div className={cn(styles.trapezium, styles.time)}>
 				<span className={styles.text}>{time}</span>
 			</div>
 		</div>

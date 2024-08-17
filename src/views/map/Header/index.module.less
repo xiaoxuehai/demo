@@ -1,0 +1,78 @@
+.header {
+	display: flex;
+	position: relative;
+	z-index: 9;
+	color: #fff;
+	.trapezium {
+		position: absolute;
+		top: 10px;
+		background-color: rgba(19, 25, 47, 0.6);
+		height: 50px;
+		display: flex;
+		align-items: center;
+		padding: 0 50px;
+		width: 33.33%;
+		box-sizing: border-box;
+		.text {
+			font-size: 26px;
+			display: inline-block;
+		}
+		&.time {
+			right: 0;
+			transform: skewX(-45deg);
+			justify-content: flex-end;
+			.text {
+				transform: skewX(45deg);
+			}
+		}
+		&.store {
+			left: 0;
+			transform: skewX(45deg);
+			
+			.text {
+				transform: skewX(-45deg);
+				display: flex;
+				align-items: center;
+				line-height: 40px;
+				.store-title{
+					color: #fff;
+					font-size: 32rpx;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.Decoration10 {
+		width: 33.33%;
+		height: 4px;
+	}
+	.middle {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		.Decoration8 {
+			width: 25%;
+			height: 60px;
+		}
+		.title {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 50%;
+			.Decoration6 {
+				width: 80%;
+				height: 20px;
+			}
+			.text {
+				padding-bottom: 10px;
+				font-size: 28px;
+				font-weight: bold;
+				color: #fff;
+			}
+		}
+	}
+	.reverse {
+		transform: rotateY(180deg);
+	}
+}

@@ -8,7 +8,7 @@
 
 window.__APP_CONFIG__ = {
     "VITE_BASE": "/screen",
-    "VITE_APP_TITLE": "智慧农贸可视化大屏",
-    "VITE_APP_BASE_API": "http://zhnm.stalltv.hlwulian.com",
+    "VITE_APP_TITLE": "大数据可视化平台",
+    "VITE_APP_BASE_API": "/",
 };
 Object.freeze(window.__PRODUCTION__CONF__); Object.defineProperty(window, "__PRODUCTION__CONF__", { configurable: false, writable: false, });
