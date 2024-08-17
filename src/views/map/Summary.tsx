@@ -6,14 +6,16 @@ export type SummaryProps = {
 };
 export function Summary({ title, count }: SummaryProps) {
 	return (
-		<BorderBox8 className='bg-[rgba(19,25,47,0.9)] w-72 h-36'>
-			<div className='w-full h-full flex items-center justify-center gap-x-3 text-3xl text-white'>
-				<img src={monitoring} className='w-24' />
-				<div className='flex flex-col items-center gap-4'>
-					<div>{title}</div>
-					<div>{count} 个</div>
+		<div className='w-72 h-36'>
+			<BorderBox8 className='bg-[rgba(19,25,47,0.9)]'>
+				<div className='w-full h-full flex items-center justify-center gap-x-3 text-3xl text-white'>
+					<img src={monitoring} className='w-24' />
+					<div className='flex flex-col items-center gap-4'>
+						<div>{title}</div>
+						<div>{count} 个</div>
+					</div>
 				</div>
-			</div>
-		</BorderBox8>
+			</BorderBox8>
+		</div>
 	);
 }
