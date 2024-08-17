@@ -2,7 +2,7 @@
  * @Author: 肖 学海 1379228273@qq.com
  * @Date: 2022-12-16 12:48:51
  * @LastEditors: xuehai.xiao xuehai.xiao@meehealth.com
- * @LastEditTime: 2024-08-17 16:14:39
+ * @LastEditTime: 2024-08-17 16:24:33
  * @Description:
  */
 // import useDraw from '@/hooks/useDraw';
@@ -11,8 +11,8 @@ import Header from './Header';
 import { Loading } from '@jiaminghi/data-view-react';
 import { useEffect, useState } from 'react';
 import AMapLoader from '@amap/amap-jsapi-loader';
-import monitoring_green from './iccons/monitoring_green.png';
-import monitoring_red from './iccons/monitoring_red.png';
+// import monitoring_green from './iccons/monitoring_green.png';
+// import monitoring_red from './iccons/monitoring_red.png';
 import { Input, Message, Select } from '@arco-design/web-react';
 import { Summary } from './Summary';
 import { BorderBox11 } from '@jiaminghi/data-view-react';
@@ -20,6 +20,11 @@ import './index.less';
 import { List } from './List';
 
 const Map = () => {
+	function getIcon(online: boolean) {
+		return `<svg t="1723882616001" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3724" width="1em" height="1em"><path d="M496.704163 1017.589188a21.759769 21.759769 0 0 0 30.783672 0s309.052716-309.436712 309.884708-310.652699a428.347449 428.347449 0 1 0-650.745086 0.127998c0.95999 1.215987 310.076705 310.524701 310.076706 310.524701M512 232.893526a183.998045 183.998045 0 1 1 0 368.124088 184.062044 184.062044 0 1 1 0-368.124088m0 0" fill="${
+			online ? '#148e75' : '#9e0020'
+		}" p-id="3725"></path></svg>`;
+	}
 	const monitorList = [
 		{ online: true, coord: [109.560848, 18.282999], name: '未名湖' },
 		{ online: false, coord: [109.590845, 18.285328], name: '新村' },
@@ -62,18 +67,27 @@ const Map = () => {
 				// 	imageSize: new AMap.Size(73, 83)
 				// 	// imageOffset: new AMap.Pixel(-95, -3)
 				// });
-				const img = document.createElement('img');
-				img.src = item.online ? monitoring_green : monitoring_red;
+				// const img = document.createElement('img');
+				// img.src = item.online ? monitoring_green : monitoring_red;
 
-				img.classList.add(
+				// img.classList.add(
+				// 	'marker-icon',
+				// 	'w-[73px]',
+				// 	item.online ? 'online' : 'offline'
+				// );
+				const div = document.createElement('div');
+
+				div.classList.add(
 					'marker-icon',
-					'w-[73px]',
+					'w-[36px]',
+					'h-[36px]',
 					item.online ? 'online' : 'offline'
 				);
+				div.innerHTML = getIcon(item.online);
 				const marker = new AMap.Marker({
 					position: new AMap.LngLat(...item.coord),
 					// icon
-					content: img,
+					content: div,
 					offset: new AMap.Pixel(-36, -42)
 				});
 				marker.setExtData(item);

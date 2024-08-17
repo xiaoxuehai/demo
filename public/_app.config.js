@@ -8,7 +8,7 @@
 
 window.__APP_CONFIG__ = {
     "VITE_BASE": "/",
-    "VITE_APP_TITLE": "大数据可视化平台",
+    "VITE_APP_TITLE": "吉阳区应急管理可视化平台",
     "VITE_APP_BASE_API": "/",
 };
 Object.freeze(window.__PRODUCTION__CONF__); Object.defineProperty(window, "__PRODUCTION__CONF__", { configurable: false, writable: false, });

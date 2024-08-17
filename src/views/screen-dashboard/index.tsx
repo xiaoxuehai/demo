@@ -1,8 +1,8 @@
 /*
  * @Author: 肖 学海 1379228273@qq.com
  * @Date: 2022-12-16 12:48:51
- * @LastEditors: 肖 学海 1379228273@qq.com
- * @LastEditTime: 2023-04-02 09:44:10
+ * @LastEditors: xuehai.xiao xuehai.xiao@meehealth.com
+ * @LastEditTime: 2024-08-17 14:22:54
  * @Description:
  */
 import useDraw from '@/hooks/useDraw';
@@ -28,7 +28,7 @@ import { ScreenState, StoreItem } from '@/api/index.model';
 
 const Screen = () => {
 	const { containerRef } = useDraw();
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const [state, setState] = useState<ScreenState>({
 		businessData: {},
 		goodsSellRankingList: [],

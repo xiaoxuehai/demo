@@ -2,13 +2,13 @@
  * @Author: 肖 学海 1379228273@qq.com
  * @Date: 2022-12-16 13:43:22
  * @LastEditors: xuehai.xiao xuehai.xiao@meehealth.com
- * @LastEditTime: 2024-08-17 10:22:34
+ * @LastEditTime: 2024-08-17 15:37:44
  * @Description:
  */
 import {
 	Decoration10,
-	Decoration8,
-	Decoration6
+	Decoration8
+	// Decoration6
 } from '@jiaminghi/data-view-react';
 import styles from './index.module.less';
 
@@ -25,9 +25,7 @@ const Header = () => {
 
 	useEffect(() => {
 		setInterval(() => {
-			setTime(
-				`${dayjs().format('YYYY-MM-DD HH:mm:ss')}  ${weeks[dayjs().day()]}`
-			);
+			setTime(`${dayjs().format('YYYY-MM-DD HH:mm:ss')}`);
 		}, 1000);
 	}, []);
 
@@ -66,11 +64,11 @@ const Header = () => {
 				/>
 				<div className={styles.title}>
 					<div className={styles.text}>{VITE_APP_TITLE}</div>
-					<Decoration6
+					{/* <Decoration6
 						className={styles.Decoration6}
 						reverse={true}
 						color={['#50e3c2', '#67a1e5']}
-					/>
+					/> */}
 				</div>
 
 				<Decoration8
@@ -83,6 +81,7 @@ const Header = () => {
 
 			<div className={cn(styles.trapezium, styles.time)}>
 				<span className={styles.text}>{time}</span>
+				<span className={styles.weekday}>{weeks[dayjs().day()]}</span>
 			</div>
 		</div>
 	);
