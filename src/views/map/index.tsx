@@ -2,7 +2,7 @@
  * @Author: 肖 学海 1379228273@qq.com
  * @Date: 2022-12-16 12:48:51
  * @LastEditors: xuehai.xiao xuehai.xiao@meehealth.com
- * @LastEditTime: 2024-08-17 13:43:54
+ * @LastEditTime: 2024-08-17 13:47:54
  * @Description:
  */
 // import useDraw from '@/hooks/useDraw';
@@ -46,8 +46,7 @@ const Map = () => {
 				zoom: 15, //初始化地图级别
 				center: [114.373252, 30.505342] //初始化地图中心点位置
 			});
-			map.on('zoomend', event => {
-				console.log(event, 'ee');
+			map.on('zoomend', () => {
 				console.log(map.getZoom());
 			});
 			const markers = monitorList.map(item => {
