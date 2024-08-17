@@ -2,7 +2,7 @@
  * @Author: 肖 学海 1379228273@qq.com
  * @Date: 2022-12-16 12:48:51
  * @LastEditors: xuehai.xiao xuehai.xiao@meehealth.com
- * @LastEditTime: 2024-08-17 13:05:17
+ * @LastEditTime: 2024-08-17 13:43:54
  * @Description:
  */
 // import useDraw from '@/hooks/useDraw';
@@ -15,6 +15,8 @@ import monitoring_green from './iccons/monitoring_green.png';
 import monitoring_red from './iccons/monitoring_red.png';
 import { Message } from '@arco-design/web-react';
 import { Summary } from './Summary';
+import './index.less';
+
 const Map = () => {
 	const monitorList = [
 		{ online: true, coord: [114.373252, 30.505342] },
@@ -44,17 +46,29 @@ const Map = () => {
 				zoom: 15, //初始化地图级别
 				center: [114.373252, 30.505342] //初始化地图中心点位置
 			});
-
+			map.on('zoomend', event => {
+				console.log(event, 'ee');
+				console.log(map.getZoom());
+			});
 			const markers = monitorList.map(item => {
-				const icon = new AMap.Icon({
-					size: new AMap.Size(73, 83),
-					image: item.online ? monitoring_green : monitoring_red,
-					imageSize: new AMap.Size(73, 83)
-					// imageOffset: new AMap.Pixel(-95, -3)
-				});
+				// const icon = new AMap.Icon({
+				// 	size: new AMap.Size(73, 83),
+				// 	image: item.online ? monitoring_green : monitoring_red,
+				// 	imageSize: new AMap.Size(73, 83)
+				// 	// imageOffset: new AMap.Pixel(-95, -3)
+				// });
+				const img = document.createElement('img');
+				img.src = item.online ? monitoring_green : monitoring_red;
+
+				img.classList.add(
+					'marker-icon',
+					'w-[73px]',
+					item.online ? 'online' : 'offline'
+				);
 				const marker = new AMap.Marker({
 					position: new AMap.LngLat(...item.coord),
-					icon: icon
+					// icon
+					content: img
 					// offset: new AMap.Pixel(-13, -30)
 				});
 				marker.setExtData(item);
@@ -71,6 +85,7 @@ const Map = () => {
 		.catch(e => {
 			console.log(e);
 		});
+
 	// const { containerRef } = useDraw();
 	const [loading, setLoading] = useState(true);
 
@@ -86,7 +101,7 @@ const Map = () => {
 					<span className='text-white'>加载数据中...</span>
 				</Loading>
 			) : (
-				<div className='h-full w-full relative p-3'>
+				<div className='h-full w-full relative p-3 box-border'>
 					<Header />
 					<div
 						id='container'
