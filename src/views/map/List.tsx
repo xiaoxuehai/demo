@@ -7,10 +7,12 @@
  * @Description:
  */
 import { ScrollBoard } from '@jiaminghi/data-view-react';
-export function List() {
+export function List({ data }: any) {
+	console.log(data, 'data');
+
 	const config = {
 		// 表头背景色
-		headerBGC: '#443dc5',
+		headerBGC: '#1370fb',
 		// 奇数行背景色
 		oddRowBGC: '#09184F',
 		// 偶数行背景色
@@ -24,29 +26,16 @@ export function List() {
 		// 对其方式
 		align: ['center'],
 		// 表行数
-		rowNum: 10,
+		rowNum: 6,
 		header: ['地址'],
-		data: [
-			['洪山体育馆1'],
-			['洪山体育馆2'],
-			['洪山体育馆3'],
-			['洪山体育馆4'],
-			['洪山体育馆5'],
-			['洪山体育馆6'],
-			['洪山体育馆7'],
-			['洪山体育馆8'],
-			['洪山体育馆9'],
-			['洪山体育馆10'],
-			['洪山体育馆11'],
-			['洪山体育馆12']
-		]
+		data
 	};
 	return (
 		<ScrollBoard
 			config={config}
 			style={{
-				width: '350px',
-				height: 'calc(100vh - 230px)'
+				width: '100%',
+				height: '100%'
 			}}
 		></ScrollBoard>
 	);

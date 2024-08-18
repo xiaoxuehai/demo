@@ -9,6 +9,7 @@ import { Navigate, RouteObject, useRoutes } from 'react-router-dom';
 import Map from '@/views/map';
 import Map2 from '@/views/map/index2';
 import ScreenDashboard from '@/views/screen-dashboard';
+import Leaflet from '@/views/leaflet';
 export const routes: RouteObject[] = [
 	{
 		path: '/',
@@ -22,10 +23,10 @@ export const routes: RouteObject[] = [
 		path: '/map2',
 		element: <Map2 />
 	},
-	// {
-	// 	path: '/',
-	// 	element: <Navigate to='/screen-dashboard' />
-	// },
+	{
+		path: '/leaflet',
+		element: <Leaflet />
+	},
 	{
 		path: '/screen-dashboard',
 		element: <ScreenDashboard />
