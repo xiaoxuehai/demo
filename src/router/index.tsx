@@ -7,7 +7,12 @@
  */
 import { Navigate, RouteObject, useRoutes } from 'react-router-dom';
 import Map from '@/views/map';
+import Leaflet from '@/views/leaflet';
 export const routes: RouteObject[] = [
+	{
+		path: '/leaflet',
+		element: <Leaflet />
+	},
 	{
 		path: '/',
 		element: <Navigate to='/map' />
