@@ -38,7 +38,7 @@ const FoodSafetyCheck: FC<{ data: FoodSafetyCheckList }> = props => {
 		item.checkQty
 	]);
 	return (
-		<div className='p-4 w-full h-full box-border'>
+		<div className='p-4 w-full h-full '>
 			<ScrollBoard
 				classNmae='w-full h-full'
 				config={{ ...config, header, data }}

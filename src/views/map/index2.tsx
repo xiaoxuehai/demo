@@ -148,7 +148,7 @@ const Map = () => {
 					<span className='text-white'>加载数据中...</span>
 				</Loading>
 			) : (
-				<div className='h-full w-full relative p-3 box-border'>
+				<div className='h-full w-full relative p-3 '>
 					<Header />
 					<div
 						id='container'
@@ -167,8 +167,8 @@ const Map = () => {
 						/>
 					</div>
 					<div className='w-[390px] h-[calc(100vh_-_270px)]'>
-						<BorderBox11 title='区域统计' className='pt-12 box-border'>
-							<div className='bg-[rgba(19,25,47,0.9)] w-[370px] my-0 mx-auto p-3 box-border rounded-xl'>
+						<BorderBox11 title='区域统计' className='pt-12 '>
+							<div className='bg-[rgba(19,25,47,0.9)] w-[370px] my-0 mx-auto p-3  rounded-xl'>
 								<div className='flex gap-x-3 pb-3 w-[350px] my-0 mx-auto'>
 									<Select placeholder='请选择区域分类'>
 										{categories.map(item => (

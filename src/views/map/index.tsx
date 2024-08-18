@@ -117,15 +117,15 @@ const Map = () => {
 	}, []);
 
 	const categories = [
-		'危房',
-		'主干道低洼易涝点',
-		'各村社区低洼易安置点',
-		'地质灾害隐患点',
-		'水库山塘（河道）',
-		'景区景点',
-		'易受淹小区',
-		'漫水路桥',
-		'物资仓库点位'
+		{ title: '危房数量', count: 1 },
+		{ title: '主干道低洼易涝点数量', count: 2 },
+		{ title: '各村社区低洼易安置点数量', count: 3 },
+		{ title: '地质灾害隐患点数量', count: 1 },
+		{ title: '水库山塘（河道）数量', count: 1 },
+		{ title: '景区景点数量', count: 1 },
+		{ title: '易受淹小区数量', count: 1 },
+		{ title: '漫水路桥数量', count: 1 },
+		{ title: '物资仓库点位数量', count: 1 }
 	];
 	return (
 		<div className='w-screen h-screen bg-[url("@/assets/images/bg.png")] bg-cover bg-center'>
@@ -134,32 +134,26 @@ const Map = () => {
 					<span className='text-white'>加载数据中...</span>
 				</Loading>
 			) : (
-				<div className='h-full w-full relative p-3 box-border'>
+				<div className='h-full w-full relative p-3 '>
 					<Header />
 					<div
 						id='container'
 						className='w-full h-full absolute top-0 bottom-0 left-0 right-0'
 					></div>
 
-					<div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-x-3'>
-						<Summary title='总数量' count={monitorList.length} />
-						<Summary
-							title='在线数量'
-							count={monitorList.filter(item => item.online).length}
-						/>
-						<Summary
-							title='离线数量'
-							count={monitorList.filter(item => !item.online).length}
-						/>
+					<div className='absolute w-[680px] bottom-8 left-1/2 transform -translate-x-1/2 grid grid-cols-3 gap-3'>
+						{categories.map(item => (
+							<Summary key={item.title} title={item.title} count={item.count} />
+						))}
 					</div>
-					<div className='w-[390px] h-[calc(100vh_-_270px)]'>
-						<BorderBox11 title='区域统计' className='pt-12 box-border'>
-							<div className='bg-[rgba(19,25,47,0.9)] w-[370px] my-0 mx-auto p-3 box-border rounded-xl'>
+					<div className='w-[390px] h-[calc(100vh_-_100px)]'>
+						<BorderBox11 title='区域统计' className='pt-12 '>
+							<div className='bg-[rgba(19,25,47,0.9)] w-[370px] my-0 mx-auto p-3  rounded-xl'>
 								<div className='flex gap-x-3 pb-3 w-[350px] my-0 mx-auto'>
 									<Select placeholder='请选择区域分类'>
 										{categories.map(item => (
-											<Select.Option key={item} value={item}>
-												{item}
+											<Select.Option key={item.title} value={item.title}>
+												{item.title}
 											</Select.Option>
 										))}
 									</Select>

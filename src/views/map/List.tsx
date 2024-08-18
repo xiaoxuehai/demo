@@ -46,7 +46,7 @@ export function List() {
 			config={config}
 			style={{
 				width: '350px',
-				height: 'calc(100vh - 400px)'
+				height: 'calc(100vh - 230px)'
 			}}
 		></ScrollBoard>
 	);

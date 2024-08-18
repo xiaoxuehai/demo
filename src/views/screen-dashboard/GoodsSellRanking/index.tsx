@@ -37,7 +37,7 @@ const GoodsSellRanking: FC<{ data: GoodsSellRankingList }> = props => {
 		item.amount
 	]);
 	return (
-		<div className='p-4 w-full h-full box-border'>
+		<div className='p-4 w-full h-full '>
 			<ScrollBoard
 				classNmae='w-full h-full'
 				config={{ ...config, header, data }}
