@@ -138,23 +138,23 @@ const Map = () => {
 	return (
 		<div className='w-screen h-screen'>
 			{loading && (
-				<div className='bg-[url("@/assets/images/bg.png")] bg-cover bg-center w-full h-full fixed top-0 left-0 bottom-0 right-0'>
+				<div className='bg-[url("@/assets/images/bg.png")] bg-cover bg-center w-full h-full fixed top-0 left-0 bottom-0 right-0 z-50'>
 					<Loading>
 						<span className='text-white'>加载数据中...</span>
 					</Loading>
 				</div>
 			)}
-			<div className='h-full w-full relative p-3 '>
+			<div className='h-full w-full relative p-3'>
 				<Header />
 				<div
 					id='container'
 					className='w-full h-full absolute top-0 bottom-0 left-0 right-0'
 				></div>
-				<div className='absolute bottom-3 left-1/2 transform -translate-x-1/2 grid gap-2 grid-cols-3 w-[calc(100vw_-_810px)]'>
+				{/* <div className='absolute bottom-3 left-1/2 transform -translate-x-1/2 grid gap-2 grid-cols-3 w-[calc(100vw_-_810px)]'>
 					{summaries.map(item => (
 						<Summary key={item.title} title={item.title} count={item.count} />
 					))}
-				</div>
+				</div> */}
 				<div className='fixed left-3 bottom-3 top-20 flex flex-col w-[380px] gap-y-3'>
 					<Container className='p-3 h-[240px] flex flex-col'>
 						<div className='text-xl text-white'>区域分类统计</div>

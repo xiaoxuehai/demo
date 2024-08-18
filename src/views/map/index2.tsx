@@ -149,7 +149,7 @@ const Map = () => {
 	return (
 		<div className='w-screen h-screen'>
 			{loading && (
-				<div className='bg-[url("@/assets/images/bg.png")] bg-cover bg-center w-full h-full fixed top-0 left-0 bottom-0 right-0'>
+				<div className='bg-[url("@/assets/images/bg.png")] bg-cover bg-center w-full h-full fixed top-0 left-0 bottom-0 right-0 z-50'>
 					<Loading>
 						<span className='text-white'>加载数据中...</span>
 					</Loading>
