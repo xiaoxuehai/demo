@@ -10,6 +10,8 @@ import Map from '@/views/map';
 import Map2 from '@/views/map/index2';
 import ScreenDashboard from '@/views/screen-dashboard';
 import Leaflet from '@/views/leaflet';
+import Antv from '@/views/antv';
+import Ol from '@/views/ol';
 export const routes: RouteObject[] = [
 	{
 		path: '/',
@@ -26,6 +28,14 @@ export const routes: RouteObject[] = [
 	{
 		path: '/leaflet',
 		element: <Leaflet />
+	},
+	{
+		path: '/antv',
+		element: <Antv />
+	},
+	{
+		path: '/ol',
+		element: <Ol />
 	},
 	{
 		path: '/screen-dashboard',
