@@ -1,0 +1,232 @@
+[
+	{
+		"name": "物资仓库点",
+		"children": [
+			{
+				"name": "卓达社区物资仓库",
+				"address": "吉阳区月明东路",
+				"lnglat": []
+			},
+			{
+				"name": "月川社区三防物资仓库",
+				"address": "吉阳区月川中路",
+				"lnglat": []
+			},
+			{
+				"name": "吉阳区三防物资仓库",
+				"address": "吉阳区海螺一路一巷",
+				"lnglat": []
+			},
+			{
+				"name": "鹿回头应急物资储备点",
+				"address": "海南省三亚市吉阳区鹿鸣路6号对面",
+				"lnglat": []
+			},
+			{
+				"name": "津海消防站物资储备点",
+				"address": "海南省三亚市吉阳区三横路与抱坡路交叉口西南320米",
+				"lnglat": []
+			}
+		]
+	},
+	{
+		"name": "转移安置点",
+		"children": [
+			{
+				"name": "三亚市实验中学",
+				"address": "三亚市三亚河东路82号",
+				"lnglat": []
+			},
+			{
+				"name": "三亚技师学院",
+				"address": "三亚市吉阳区荔枝沟路53号",
+				"lnglat": []
+			},
+			{
+				"name": "三亚市救助站",
+				"address": "三亚市吉阳区荔枝沟路258号",
+				"lnglat": []
+			},
+			{
+				"name": "红花村委会深岸小组",
+				"address": "红花村文化室",
+				"lnglat": []
+			},
+			{
+				"name": "红花小学",
+				"address": "红花村",
+				"lnglat": []
+			},
+			{
+				"name": "红庄小学",
+				"address": "红花村",
+				"lnglat": []
+			},
+			{
+				"name": "鹿回头小学",
+				"address": "鹿回头社区",
+				"lnglat": []
+			},
+			{
+				"name": "经济场办公室",
+				"address": "经济场会议室",
+				"lnglat": []
+			},
+			{
+				"name": "月河居委会办公楼",
+				"address": "河东路川北巷",
+				"lnglat": []
+			},
+			{
+				"name": "三亚市第九小学月川校区",
+				"address": "河东路",
+				"lnglat": []
+			},
+			{
+				"name": "荔枝沟社区居委会办公楼",
+				"address": "荔枝沟社区",
+				"lnglat": []
+			},
+			{
+				"name": "敬老院",
+				"address": "荔枝沟社区",
+				"lnglat": []
+			},
+			{
+				"name": "丹州社区办公室",
+				"address": "迎宾路丹州小区商业中心",
+				"lnglat": []
+			},
+			{
+				"name": "安罗小学",
+				"address": "安二、三村小组",
+				"lnglat": []
+			},
+			{
+				"name": "安罗村委会",
+				"address": "上、下安一村小组",
+				"lnglat": []
+			},
+			{
+				"name": "临春居委会",
+				"address": "临春居委会办公楼",
+				"lnglat": []
+			},
+			{
+				"name": "高园村文化室",
+				"address": "高园村小组",
+				"lnglat": []
+			},
+			{
+				"name": "干沟村文化室",
+				"address": "干沟村小组",
+				"lnglat": []
+			},
+			{
+				"name": "田独村委会",
+				"address": "田独村一组",
+				"lnglat": []
+			},
+			{
+				"name": "田独小学",
+				"address": "田独村二组",
+				"lnglat": []
+			},
+			{
+				"name": "红郊社区居委会",
+				"address": "榆亚路572号",
+				"lnglat": []
+			},
+			{
+				"name": "红郊小学",
+				"address": "红郊社区",
+				"lnglat": []
+			},
+			{
+				"name": "大茅三郎村小组文化室",
+				"address": "三郎村小组",
+				"lnglat": []
+			},
+			{
+				"name": "大茅村委会",
+				"address": "大茅村委会",
+				"lnglat": []
+			},
+			{
+				"name": "田独村委会",
+				"address": "田独村一组",
+				"lnglat": []
+			}
+		]
+	},
+	{
+		"name": "主干道低洼易涝点",
+		"children": []
+	},
+	{
+		"name": "低洼易涝点",
+		"children": []
+	},
+	{
+		"name": "旅游景区景点",
+		"children": []
+	},
+	{
+		"name": "危房",
+		"children": []
+	},
+	{
+		"name": "水库",
+		"children": []
+	},
+	{
+		"name": "背街小巷易涝点",
+		"children": []
+	},
+	{
+		"name": "漫水桥",
+		"children": []
+	},
+	{
+		"name": "地址灾害隐患点",
+		"children": []
+	},
+	{
+		"name": "易受淹小区",
+		"children": []
+	}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
