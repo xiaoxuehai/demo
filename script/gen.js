@@ -1,33 +1,112 @@
+/*
+ * @Author: xuehai.xiao xuehai.xiao@meehealth.com
+ * @Date: 2024-08-30 20:31:37
+ * @LastEditors: xuehai.xiao xuehai.xiao@meehealth.com
+ * @LastEditTime: 2024-08-30 20:40:34
+ * @FilePath: \demo\script\gen.js
+ * @Description:
+ */
 import fs from 'fs';
 import path from 'path';
-const CONFIG = {
-	"name": "具体地址",
-	// "具体地址": "address",
+
+function main() {
+	const files = [
+		{
+			fileName: '易淹易涝小区',
+			fieldNames: {
+				name: '小区名称',
+				address: '具体地址'
+			}
+		},
+		{
+			fileName: '转移安置点',
+			fieldNames: {
+				name: '详细地址',
+				address: '安置点名称'
+			}
+		},
+		{
+			fileName: '主干道低洼易涝点',
+			fieldNames: {
+				name: '所在行政村',
+				address: '具体地址'
+			}
+		},
+		{
+			fileName: '低洼易涝点',
+			fieldNames: {
+				name: '所在位置',
+				address: '具体地点'
+			}
+		},
+		{
+			fileName: '危房',
+			fieldNames: {
+				name: '村',
+				address: '地址'
+			}
+		},
+		{
+			fileName: '背街小巷易涝点',
+			fieldNames: {
+				name: '所在行政村',
+				address: '具体地址'
+			}
+		},
+		{
+			fileName: '漫水桥',
+			fieldNames: {
+				name: '所在行政村',
+				address: '具体地址'
+			}
+		},
+		{
+			fileName: '地质灾害隐患点',
+			fieldNames: {
+				name: '名称',
+				address: '名称'
+			}
+		}
+	];
+	const data = [];
+	files.forEach(file => {
+		const text = fs.readFileSync(
+			path.join(process.cwd(), `data/${file.fileName}.txt`)
+		);
+		const items = text
+			.toString()
+			.split('\r\n')
+			.map(item => item.split('\t'));
+
+		const header = items.shift();
+		const result = items.map(item => {
+			const data = {
+				name: '',
+				address: ''
+			};
+			Object.entries(data).forEach(([key]) => {
+				const colName = file.fieldNames[key];
+				// if (file.fileName === '主干道低洼易涝点') {
+				// 	console.log(colName, file.fieldNames);
+				// }
+				const index = header.indexOf(colName);
+				data[key] = item[index];
+			});
+			data.details = item.map((value, index) => ({
+				label: header[index],
+				value
+			}));
+			data.coord = [];
+			return data;
+		});
+		data.push({
+			name: file.fileName,
+			children: result
+		});
+		fs.writeFileSync(
+			path.join(process.cwd(), 'data.json'),
+			JSON.stringify(data)
+		);
+	});
 }
-const text = fs.readFileSync(path.join(process.cwd(), 'data/低洼易涝点.txt'));
-const items = text.toString().split('\r\n').map(item => item.split('\t'))
-
-const header = items.shift()
-const result = items.map((item) => {
-	const data = {
-		name: "",
-		address: "",
-		detail: []
-	}
-	item.map((value, index) => {
-		const colName = header[index];
-		const fields =  Object.entries(CONFIG).filter(([_, value]) => value === colName)
-		for (const [key] of fields) {
-			data[key] = value
-		}
-		if (key) {
-			data[key] = value;
-		} else {
-			data.detail.push(`${colName}: ${value}`)
-		}
-	})
-	return data
-})
-console.log(result);
-
-// fs.writeFileSync(path.join(process.cwd(), 'data1.json'), JSON.stringify(array));
+main();

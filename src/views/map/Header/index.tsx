@@ -28,9 +28,19 @@ const Header = () => {
 			setTime(`${dayjs().format('YYYY-MM-DD HH:mm:ss')}`);
 		}, 1000);
 	}, []);
-
+	const [fullScreen, setFullScreen] = useState(false);
 	return (
-		<div className={styles.header}>
+		<div
+			className={cn(styles.header, 'cursor-pointer')}
+			onClick={() => {
+				if (fullScreen) {
+					document.exitFullscreen();
+				} else {
+					document.documentElement.requestFullscreen();
+				}
+				setFullScreen(!fullScreen);
+			}}
+		>
 			<Decoration10 className={styles.Decoration10} />
 			<div className={cn(styles.trapezium, styles.store)}>
 				{/* <span className={styles.text}>

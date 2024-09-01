@@ -17,9 +17,9 @@ import { Input, Message, Select } from '@arco-design/web-react';
 import { Summary } from './Summary';
 // import { BorderBox11, BorderBox13 } from '@jiaminghi/data-view-react';
 import './index.less';
-import { List } from './List';
+import { LocationList } from './LocationList';
 import { BarChart } from './BarChart';
-import { Right } from './Right';
+import { CategoryList } from './CategoryList';
 import { Container } from './Container';
 import { categories } from './data';
 
@@ -187,7 +187,7 @@ const Map = () => {
 								/>
 							</div>
 							<div className='flex-1 h-0'>
-								<List data={list} />
+								<LocationList data={list} />
 							</div>
 						</div>
 					</Container>
@@ -196,7 +196,7 @@ const Map = () => {
 					<Container className='flex flex-co h-full'>
 						<div className='text-xl px-3 pt-3 text-white'>区域分类统计</div>
 						<div className='flex-1 h-0 px-3'>
-							<Right data={categories} />
+							<CategoryList data={categories} />
 						</div>
 					</Container>
 				</div>
