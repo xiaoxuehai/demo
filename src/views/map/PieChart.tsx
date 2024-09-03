@@ -14,9 +14,10 @@ import { DataType } from './index2';
 export type PieChartProps = {
 	data: DataType[];
 	onChartClick?: (name: string) => void;
+	fontSize: number;
 };
 
-export const PieChart = ({ data, onChartClick }: PieChartProps) => {
+export const PieChart = ({ data, onChartClick, fontSize }: PieChartProps) => {
 	const chartRef = useRef<Nullable<HTMLDivElement>>(null);
 	const { setOptions, getInstance } = useECharts(chartRef);
 
@@ -29,7 +30,7 @@ export const PieChart = ({ data, onChartClick }: PieChartProps) => {
 				top: 'center',
 				textStyle: {
 					color: '#fff',
-					fontSize: 10
+					fontSize
 				}
 				// itemWidth: 20, // 图例项的宽度
 				// itemHeight: 10 // 图例项的高度
@@ -56,7 +57,7 @@ export const PieChart = ({ data, onChartClick }: PieChartProps) => {
 					emphasis: {
 						label: {
 							show: true,
-							fontSize: 12
+							fontSize
 						},
 						itemStyle: {
 							shadowBlur: 10,
@@ -78,7 +79,7 @@ export const PieChart = ({ data, onChartClick }: PieChartProps) => {
 				}
 			]
 		});
-	}, [data, onChartClick]);
+	}, [data, onChartClick, fontSize]);
 
 	useEffect(() => {
 		const chart = getInstance();

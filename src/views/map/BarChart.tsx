@@ -49,8 +49,7 @@ export const BarChart = () => {
 					data: categories.map(item => item.title),
 					axisLabel: {
 						color: '#BCDCF0',
-
-						fontSize: 12
+						fontSize: 18
 					},
 
 					splitLine: {
@@ -68,7 +67,7 @@ export const BarChart = () => {
 					type: 'category',
 					axisLabel: {
 						color: '#BCDCF0',
-						fontSize: 12
+						fontSize: 18
 					},
 					splitLine: {
 						show: false

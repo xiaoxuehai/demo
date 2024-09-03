@@ -24,6 +24,7 @@ import axios from 'axios';
 import { PlayerModal } from './PlayerModal';
 import { cn } from '@/lib/cn';
 import dayjs from 'dayjs';
+import { CACHE_KEY, SettingModal } from './Header/SettingModal';
 export type DataType = {
 	name: string;
 	color: string;
@@ -42,6 +43,16 @@ const Map = () => {
 	const [data, setData] = useState<DataType[]>([]);
 	const [map, setMap] = useState<any>();
 	const [AMap, setAMap] = useState<any>();
+	const [mapSetting, setMapSetting] = useState({
+		fontSize: 14,
+		mapStyle: 'normal'
+	});
+	useEffect(() => {
+		const mapSetting = localStorage.getItem(CACHE_KEY);
+		if (!mapSetting) return;
+		const { fontSize, mapStyle } = JSON.parse(mapSetting);
+		setMapSetting({ fontSize, mapStyle });
+	}, []);
 	async function getData() {
 		setTimeout(() => {
 			setLoading(false);
@@ -105,11 +116,18 @@ const Map = () => {
 			plugins: ['AMap.Scale'] //需要使用的的插件列表，如比例尺'AMap.Scale'，支持添加多个如：['AMap.Scale','...','...']
 		})
 			.then(AMap => {
+				const style = mapSetting?.mapStyle || 'darkblue';
 				const map = new AMap.Map('container', {
 					resizeEnable: true, //是否监控地图容器尺寸变化
-					mapStyle: 'amap://styles/darkblue',
+					mapStyle: `amap://styles/${style}`,
+					titleFontSize: '30px',
 					...DEFAULT_DATA
 				});
+				const trafficLayer = new AMap.TileLayer.Traffic({
+					zIndex: 10,
+					zooms: [7, 22]
+				});
+				trafficLayer.setMap(map);
 				map.on('zoomend', () => {
 					console.log(map.getZoom());
 				});
@@ -122,6 +140,11 @@ const Map = () => {
 			});
 	}
 	const markers = useRef<Recordable[]>([]);
+
+	function setMapStyle(style) {
+		map.setMapStyle(`amap://styles/${style}`);
+	}
+
 	function createMarkers() {
 		if (map && AMap) {
 			removeAllMarkers();
@@ -174,11 +197,11 @@ const Map = () => {
 					${item.details
 						.map(
 							content =>
-								`<div class='leading-6'>${content.label}：${content.value}</div>`
+								`<div class='leading-6 text-[1rem]'>${content.label}：${content.value}</div>`
 						)
 						.join('')}
 					</div>
-					<div>是否有监控视频：<span class='${
+					<div class='text-[1rem]'>是否有监控视频：<span class='${
 						item.online ? 'text-green-500' : 'text-red-500'
 					}'>${item.coord.length ? '有' : '无'}</span></div>
 					`,
@@ -192,7 +215,7 @@ const Map = () => {
 
 				// 绑定鼠标移出事件，隐藏信息窗口
 				marker.on('mouseout', () => {
-					// infoWindow.close();
+					infoWindow.close();
 				});
 				return {
 					...item,
@@ -216,9 +239,10 @@ const Map = () => {
 		map.setCenter(coord);
 
 		// 获取最大缩放级别
-		map.getZooms().forEach(zoom => {
-			map.setZoom(zoom);
-		});
+		map.setZoom(19);
+		// map.getZooms().forEach(zoom => {
+		// 	map.setZoom(zoom);
+		// });
 		// const marker = markers.current.find(
 		// 	item => item.coord.join(',') === coord.join(',')
 		// );
@@ -232,7 +256,12 @@ const Map = () => {
 	// 	{ title: '在线数量', count: 8 },
 	// 	{ title: '离线数量', count: 2 }
 	// ];
-
+	const [settingModalVisible, setSettingModalVisible] = useState(false);
+	useEffect(() => {
+		if (!mapSetting) return;
+		map && setMapStyle(mapSetting.mapStyle);
+		document.documentElement.style.fontSize = `${mapSetting.fontSize}px`;
+	}, [mapSetting, map]);
 	return (
 		<>
 			<div className='w-screen h-screen'>
@@ -244,7 +273,7 @@ const Map = () => {
 					</div>
 				)}
 				<div className='h-full w-full relative p-3 '>
-					<Header />
+					<Header onSetting={() => setSettingModalVisible(true)} />
 					<div
 						id='container'
 						className='w-full h-full absolute top-0 bottom-0 left-0 right-0'
@@ -261,6 +290,7 @@ const Map = () => {
 								<PieChart
 									data={data}
 									onChartClick={(value: string) => setCategory(value)}
+									fontSize={mapSetting?.fontSize || 14}
 								/>
 							</div>
 						</Container>
@@ -349,6 +379,13 @@ const Map = () => {
 			<PlayerModal
 				visible={playerModalVisible}
 				onCancel={() => setPlayerModalVisible(false)}
+			/>
+			<SettingModal
+				visible={settingModalVisible}
+				onCancel={() => setSettingModalVisible(false)}
+				onSuccess={({ fontSize, mapStyle }) => {
+					setMapSetting({ fontSize, mapStyle });
+				}}
 			/>
 		</>
 	);
