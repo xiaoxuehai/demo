@@ -66,6 +66,13 @@ function main() {
 				name: '名称',
 				address: '名称'
 			}
+		},
+		{
+			fileName: '水库',
+			fieldNames: {
+				name: '水库名称',
+				address: '水库名称'
+			}
 		}
 	];
 	const data = [];
