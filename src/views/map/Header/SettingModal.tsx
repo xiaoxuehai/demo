@@ -30,7 +30,8 @@ export function SettingModal({ onSuccess, ...rest }: SettingModalProps) {
 		},
 		{
 			label: '幻影黑',
-			value: 'dark'
+			value: 'dark',
+			dark: true
 		},
 		{
 			label: '月光银',
@@ -46,11 +47,13 @@ export function SettingModal({ onSuccess, ...rest }: SettingModalProps) {
 		},
 		{
 			label: '雅士灰',
-			value: 'grey'
+			value: 'grey',
+			dark: true
 		},
 		{
 			label: '涂鸦',
-			value: 'graffiti'
+			value: 'graffiti',
+			dark: true
 		},
 		{
 			label: '马卡龙',
@@ -58,20 +61,31 @@ export function SettingModal({ onSuccess, ...rest }: SettingModalProps) {
 		},
 		{
 			label: '靛青蓝',
-			value: 'blue'
+			value: 'blue',
+			dark: true
 		},
 		{
 			label: '极夜蓝',
-			value: 'darkblue'
+			value: 'darkblue',
+			dark: true
 		},
 		{
 			label: '酱籽',
-			value: 'wine'
+			value: 'wine',
+			dark: true
 		}
 	];
+	function generateFontSize(start, end, interval) {
+		const result = [];
+		for (let i = start; i <= end; i += interval) {
+			result.push(i);
+		}
+		return Object.fromEntries(result.map(value => [value, `${value}px`]));
+	}
+
 	return (
 		<Modal
-			className='w-[600px]'
+			className='w-[900px]'
 			title='设置'
 			{...rest}
 			onConfirm={() => {
@@ -79,26 +93,20 @@ export function SettingModal({ onSuccess, ...rest }: SettingModalProps) {
 				localStorage.setItem(CACHE_KEY, JSON.stringify(values));
 				rest.onCancel?.();
 				Message.success('设置成功');
-				onSuccess(values);
+				onSuccess({
+					...values,
+					mapDark: !!styles.find(style => style.value === values.mapStyle)?.dark
+				});
 			}}
 		>
 			<Form form={form} labelCol={{ span: 4 }}>
 				<Form.Item label='字体大小' field='fontSize' initialValue={14}>
 					<Slider
-						max={20}
+						max={40}
 						min={12}
 						showTicks
-						marks={{
-							12: '12px',
-							13: '13px',
-							14: '14px',
-							15: '15px',
-							16: '16px',
-							17: '17px',
-							18: '18px',
-							19: '19px',
-							20: '20px'
-						}}
+						step={2}
+						marks={generateFontSize(12, 40, 2)}
 					/>
 				</Form.Item>
 				<Form.Item label='地图样式' field='mapStyle' initialValue='darkblue'>

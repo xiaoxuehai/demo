@@ -7,7 +7,7 @@
  */
 import Header from './Header';
 import { Loading } from '@jiaminghi/data-view-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { ComponentProps, useEffect, useMemo, useRef, useState } from 'react';
 import AMapLoader from '@amap/amap-jsapi-loader';
 // import monitoring_green from './iccons/monitoring_green.png';
 // import monitoring_red from './iccons/monitoring_red.png';
@@ -45,13 +45,14 @@ const Map = () => {
 	const [AMap, setAMap] = useState<any>();
 	const [mapSetting, setMapSetting] = useState({
 		fontSize: 14,
-		mapStyle: 'normal'
+		mapStyle: 'normal',
+		mapDark: false
 	});
 	useEffect(() => {
 		const mapSetting = localStorage.getItem(CACHE_KEY);
 		if (!mapSetting) return;
-		const { fontSize, mapStyle } = JSON.parse(mapSetting);
-		setMapSetting({ fontSize, mapStyle });
+		const { fontSize, mapStyle, mapDark } = JSON.parse(mapSetting);
+		setMapSetting({ fontSize, mapStyle, mapDark });
 	}, []);
 	async function getData() {
 		setTimeout(() => {
@@ -67,7 +68,7 @@ const Map = () => {
 		getData();
 	}, []);
 	function getIcon(color: string) {
-		return `<svg t="1723882616001" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3724" width="1em" height="1em"><path d="M496.704163 1017.589188a21.759769 21.759769 0 0 0 30.783672 0s309.052716-309.436712 309.884708-310.652699a428.347449 428.347449 0 1 0-650.745086 0.127998c0.95999 1.215987 310.076705 310.524701 310.076706 310.524701M512 232.893526a183.998045 183.998045 0 1 1 0 368.124088 184.062044 184.062044 0 1 1 0-368.124088m0 0" fill="${color}" p-id="3725"></path></svg>`;
+		return `<svg t="1723882616001" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3724" width="1em" height="1em"><path d="M496.704163 1017.589188a21.759769 21.759769 0 0 0 30.783672 0s309.052716-309.436712 309.884708-310.652699a428.347449 428.347449 0 1 0-650.745086 0.127998c0.95999 1.215987 310.076705 310.524701 310.076706 310.524701M512 232.893526a183.998045 183.998045 0 1 1 0 368.124088 184.062044 184.062044 0 1 1 0-368.124088m0 0" fill="${color}" p-id="3725"></path></svg>`;
 	}
 
 	// @ts-ignore
@@ -116,7 +117,7 @@ const Map = () => {
 			plugins: ['AMap.Scale'] //需要使用的的插件列表，如比例尺'AMap.Scale'，支持添加多个如：['AMap.Scale','...','...']
 		})
 			.then(AMap => {
-				const style = mapSetting?.mapStyle || 'darkblue';
+				const style = mapSetting?.mapStyle || 'normal';
 				const map = new AMap.Map('container', {
 					resizeEnable: true, //是否监控地图容器尺寸变化
 					mapStyle: `amap://styles/${style}`,
@@ -144,7 +145,15 @@ const Map = () => {
 	function setMapStyle(style) {
 		map.setMapStyle(`amap://styles/${style}`);
 	}
-
+	function setCssVars() {
+		document.documentElement.style.setProperty(
+			'--title-color',
+			mapSetting.mapDark ? '#fff' : '#070c34'
+		);
+	}
+	const [point, setPoint] = useState<Recordable | null>(null);
+	const [pointVisible, setPointVisible] = useState(false);
+	const timer = useRef<TimeoutHandle>();
 	function createMarkers() {
 		if (map && AMap) {
 			removeAllMarkers();
@@ -183,25 +192,30 @@ const Map = () => {
 					const data = event.target.getExtData();
 					console.log(data, 'data');
 					// Message.success('查看监控视频');
-					setPlayerModalVisible(true);
+					// setPlayerModalVisible(true);
+					if (data.url) {
+						window.open(data.url);
+					} else {
+						Message.warning('暂无监控视频');
+					}
 				});
 
 				const infoWindow = new AMap.InfoWindow({
 					content: `<div>
 					
-					<div class='flex items-center gap-x-2 border-b border-gray-300 leading-8 text-base mb-2'>所属分类：${
+					<div className='flex items-center gap-x-2 border-b border-gray-300 leading-8 text-base mb-2'>所属分类：${
 						item.category.name
-					} <div class='w-3 h-3 rounded-sm' style='background-color:${
+					} <div className='w-3 h-3 rounded-sm' style='background-color:${
 						item.category.color
 					}'></div> </div>
 					${item.details
 						.map(
 							content =>
-								`<div class='leading-6 text-[1rem]'>${content.label}：${content.value}</div>`
+								`<div className='leading-6 text-[1rem]'>${content.label}：${content.value}</div>`
 						)
 						.join('')}
 					</div>
-					<div class='text-[1rem]'>是否有监控视频：<span class='${
+					<div className='text-[1rem]'>是否有监控视频：<span className='${
 						item.online ? 'text-green-500' : 'text-red-500'
 					}'>${item.coord.length ? '有' : '无'}</span></div>
 					`,
@@ -209,13 +223,30 @@ const Map = () => {
 				});
 
 				// 绑定鼠标移入事件，显示信息窗口
-				marker.on('mouseover', () => {
-					infoWindow.open(map, marker.getPosition());
+				marker.on('mouseover', (event: Recordable) => {
+					const data = event.target.getExtData();
+					console.log(data, 'ccccc');
+
+					setPoint(data);
+					setPointVisible(true);
+					// console.log(data, 'infoWindow');
+					// infoWindow.open(map, marker.getPosition());
 				});
 
 				// 绑定鼠标移出事件，隐藏信息窗口
 				marker.on('mouseout', () => {
-					infoWindow.close();
+					// infoWindow.close();
+					// setPoint(null);
+					// if (!tooltipRef.current.contains(document.activeElement)) {
+					// 	setPointVisible(false);
+					//   }
+					const infoWindow = document.getElementById('infoWindow');
+					if (!infoWindow?.matches(':hover')) {
+						setPointVisible(false);
+					}
+					// if (!infoWindow?.contains(document.activeElement)) {
+					// 	setPointVisible(false);
+					// }
 				});
 				return {
 					...item,
@@ -239,7 +270,7 @@ const Map = () => {
 		map.setCenter(coord);
 
 		// 获取最大缩放级别
-		map.setZoom(19);
+		map.setZoom(16);
 		// map.getZooms().forEach(zoom => {
 		// 	map.setZoom(zoom);
 		// });
@@ -260,11 +291,22 @@ const Map = () => {
 	useEffect(() => {
 		if (!mapSetting) return;
 		map && setMapStyle(mapSetting.mapStyle);
+		setCssVars();
 		document.documentElement.style.fontSize = `${mapSetting.fontSize}px`;
 	}, [mapSetting, map]);
 	return (
 		<>
-			<div className='w-screen h-screen'>
+			<div className='w-screen h-screen relative'>
+				{pointVisible && (
+					<InfoWindow
+						id='infoWindow'
+						onMouseOut={() => {
+							setPointVisible(false);
+						}}
+						item={point}
+						className='absolute top-[80px] left-[400px] w-[240px] z-10'
+					/>
+				)}
 				{loading && (
 					<div className='bg-[url("@/assets/images/bg.png")] bg-cover bg-center w-full h-full fixed top-0 left-0 bottom-0 right-0 z-50'>
 						<Loading>
@@ -283,7 +325,7 @@ const Map = () => {
 							<Summary key={item.title} title={item.title} count={item.count} />
 						))}
 					</div> */}
-					<div className='fixed left-3 bottom-3 top-20 flex flex-col w-[380px] gap-y-3'>
+					<div className='fixed left-3 bottom-3 top-20 flex flex-col w-[380px] gap-y-3 pt-2'>
 						<Container className='p-3 h-2/5 flex flex-col'>
 							<div className='text-xl text-white'>区域分类统计</div>
 							<div className='flex-1 h-0'>
@@ -326,7 +368,7 @@ const Map = () => {
 							</div>
 						</Container>
 					</div>
-					<div className='fixed right-3 bottom-3 top-20 flex flex-col w-[380px]'>
+					<div className='fixed right-3 bottom-3 top-20 flex flex-col w-[380px] pt-2'>
 						<Container className='flex flex-co h-full'>
 							<div className='text-xl px-3 pt-3 text-white'>区域列表</div>
 
@@ -383,8 +425,8 @@ const Map = () => {
 			<SettingModal
 				visible={settingModalVisible}
 				onCancel={() => setSettingModalVisible(false)}
-				onSuccess={({ fontSize, mapStyle }) => {
-					setMapSetting({ fontSize, mapStyle });
+				onSuccess={({ fontSize, mapStyle, mapDark }) => {
+					setMapSetting({ fontSize, mapStyle, mapDark });
 				}}
 			/>
 		</>
@@ -392,3 +434,39 @@ const Map = () => {
 };
 
 export default Map;
+
+function InfoWindow({
+	item,
+	className,
+	...rest
+}: { item: Recordable } & ComponentProps<'div'>) {
+	return (
+		<div
+			{...rest}
+			className={cn(className, 'bg-white rounded-sm shadow-sm px-3')}
+		>
+			<div>
+				<div className='flex items-center gap-x-2 border-b border-gray-300 leading-8 text-base font-bold mb-2'>
+					所属分类：{item.category.name}
+					<div
+						className='w-3 h-3 rounded-sm'
+						style={{ backgroundColor: item.category.color }}
+					/>
+				</div>
+				{item.details.map((content, index) => {
+					return (
+						<div key={index} className='leading-6 text-[1rem]'>
+							{content.label}：{content.value}
+						</div>
+					);
+				})}
+			</div>
+			<div className='text-[1rem] pb-3'>
+				是否有监控视频：
+				<span className={item.online ? 'text-green-500' : 'text-red-500'}>
+					{item.url ? '有' : '无'}
+				</span>
+			</div>
+		</div>
+	);
+}

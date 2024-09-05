@@ -10,9 +10,16 @@ export function PlayerModal({ ...rest }: PlayerModalProps) {
 			footer={cancelButtonNode => cancelButtonNode}
 			{...rest}
 		>
-			<video autoPlay muted className='w-[600px] h-[440px]'>
+			<iframe
+				style={{
+					width: 500,
+					height: 300
+				}}
+				src='http://220.174.93.243:5557/doc/index.html#/preview'
+			/>
+			{/* <video autoPlay muted className='w-[600px] h-[440px]'>
 				<source src='/video.webm' type='video/mp4' />
-			</video>
+			</video> */}
 			{/* <ReactPlayer
 				muted
 				pl

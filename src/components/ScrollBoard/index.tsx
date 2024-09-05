@@ -10,7 +10,7 @@ import {
 import classnames from 'classnames';
 
 import './style.less';
-import { cloneDeep, merge } from 'lodash-es';
+import { cloneDeep, merge, uniqBy } from 'lodash-es';
 import useAutoResize from '@/hooks/useAutoResize';
 import { co } from '@/utils/dom';
 
@@ -321,9 +321,11 @@ const ScrollBoard = forwardRef(
 						if (resume) resume();
 				  })();
 			setIsPause(true);
-			console.log(stateRef.current.rowsData, 'stateRef.current.rowsData');
 
-			setState(state => ({ ...state, rows: [...stateRef.current.rowsData] }));
+			setState(state => ({
+				...state,
+				rows: [...uniqBy(stateRef.current.rowsData, 'rowIndex')]
+			}));
 		}
 
 		const getBackgroundColor = rowIndex =>

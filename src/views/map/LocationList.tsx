@@ -11,7 +11,6 @@ import { useMemo, useState } from 'react';
 import { DataType } from './index2';
 import { Descriptions, Popover } from '@arco-design/web-react';
 import ScrollBoard from '@/components/ScrollBoard';
-import { set } from 'ol/transform';
 export function LocationList({
 	data,
 	onCellClick
@@ -50,7 +49,8 @@ export function LocationList({
 				height: '100%'
 			}}
 			renderRow={(originalNode, rowIndex, rowData) => {
-				const item = data[rowIndex];
+				const item = data[rowData.rowIndex];
+
 				return (
 					<Popover
 						key={`${rowData.toString()}-${rowData.scroll}`}

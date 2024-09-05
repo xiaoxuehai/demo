@@ -7753,5 +7753,1030 @@
 				]
 			}
 		]
-	}
+	},
+	{
+        "name": "水库",
+		"color": "#1370fb",
+        "children": [
+            {
+                "name": "三浓水库",
+                "address": "三浓水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "三浓水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑴"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "4500"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "486.9"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "87.75"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "30"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "17"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.64,18.38],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "颂和水库",
+                "address": "颂和水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "颂和水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑴"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "1000"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "330"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "441.08"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "90"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "10"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "1"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "3"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.62,18.30],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "草蓬水库",
+                "address": "草蓬水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "草蓬水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑴"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "1900"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "443.18"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "48.72"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "9"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "20"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.59,18.37],
+				"url": "http://220.174.93.243:5552/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "双本水库",
+                "address": "双本水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "双本水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "900"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "177.8"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "30"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.62,18.39],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "渣平水库",
+                "address": "渣平水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "渣平水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "256"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "30"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "4"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "8"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.60,18.35],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "红旗水库",
+                "address": "红旗水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "红旗水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "153.26"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.60,18.35],
+				"url": "http://220.174.93.243:5552/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "黄猄水库",
+                "address": "黄猄水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "黄猄水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "227.15"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.52,18.31]
+            },
+            {
+                "name": "大安水库",
+                "address": "大安水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "大安水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "1200"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "129.28"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "1"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.57,18.26],
+				"url": "http://220.174.93.243:5552/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "深南水库",
+                "address": "深南水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "深南水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "1100"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "135.98"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "4"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "2"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.55,18.34],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "南丁水库",
+                "address": "南丁水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "南丁水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "201.51"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "30"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.59,18.32],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "高园水库",
+                "address": "高园水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "高园水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "2300"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "220"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.56,18.28],
+				"url": "http://220.174.93.243:5552/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "三郎水库",
+                "address": "三郎水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "三郎水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "165.98"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "4"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "2"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.62,18.37],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "博后水库",
+                "address": "博后水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "博后水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "132"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.60,18.24],
+				"url": "http://220.174.93.243:5552/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "五一水库",
+                "address": "五一水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "五一水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "800"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "206.3"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "30"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "4"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "2"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.55,18.34],
+				"url": "http://220.174.93.243:5557/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            },
+            {
+                "name": "尖岭水库",
+                "address": "尖岭水库",
+                "details": [
+                    {
+                        "label": "水库名称",
+                        "value": "尖岭水库"
+                    },
+                    {
+                        "label": "工程规模",
+                        "value": "小⑵"
+                    },
+                    {
+                        "label": "所在市（区）",
+                        "value": "吉阳区"
+                    },
+                    {
+                        "label": "编织袋（条）",
+                        "value": "1600"
+                    },
+                    {
+                        "label": "土工布（m2）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "砂石料（m3）",
+                        "value": "201.86"
+                    },
+                    {
+                        "label": "块石（m3）",
+                        "value": "25"
+                    },
+                    {
+                        "label": "铅丝（Kg）",
+                        "value": "4"
+                    },
+                    {
+                        "label": "桩木（m3）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "救生衣（件）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "抢险舟（艘）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "发电机组（KW）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "便携灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "投光灯（只）",
+                        "value": "0"
+                    },
+                    {
+                        "label": "电缆（m）",
+                        "value": "0"
+                    }
+                ],
+                "coord": [109.62,18.33],
+				"url": "http://220.174.93.243:5552/dispatch.asp?user=admin&pass=Hm653366&page=preview.asp"
+            }
+        ]
+    }
 ]
