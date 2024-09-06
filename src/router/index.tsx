@@ -12,7 +12,7 @@ import Map2 from '@/views/map/index2';
 // import Leaflet from '@/views/leaflet';
 // import Antv from '@/views/antv';
 // import Ol from '@/views/ol';
-// import Test from '@/views/test';
+import Test from '@/views/test';
 export const routes: RouteObject[] = [
 	{
 		path: '/',
@@ -21,7 +21,7 @@ export const routes: RouteObject[] = [
 	{
 		path: '/board',
 		element: <Map2 />
-	}
+	},
 	// {
 	// 	path: '/map',
 	// 	element: <Map />
@@ -42,10 +42,10 @@ export const routes: RouteObject[] = [
 	// 	path: '/ol',
 	// 	element: <Ol />
 	// },
-	// {
-	// 	path: '/test',
-	// 	element: <Test />
-	// },
+	{
+		path: '/test',
+		element: <Test />
+	}
 	// {
 	// 	path: '/screen-dashboard',
 	// 	element: <ScreenDashboard />
