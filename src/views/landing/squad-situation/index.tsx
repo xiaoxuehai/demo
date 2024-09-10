@@ -63,7 +63,7 @@ export default function About() {
 					variants={itemVariants}
 					className='absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[10rem]'
 				></motion.div> */}
-				<div className='flex flex-col gap-3'>
+				<div className='flex flex-col gap-5'>
 					<motion.div
 						variants={itemVariants}
 						className='rounded-xl bg-black/50 p-2 ring-1 ring-inset ring-foreground/20 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl'
