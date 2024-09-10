@@ -13,6 +13,10 @@ import Map2 from '@/views/map/index2';
 // import Antv from '@/views/antv';
 // import Ol from '@/views/ol';
 import Test from '@/views/test';
+import About from '@/views/landing/about';
+import Landing from '@/views/landing';
+import SquadSituation from '@/views/landing/squad-situation';
+import Case from '@/views/landing/case';
 export const routes: RouteObject[] = [
 	{
 		path: '/',
@@ -45,11 +49,29 @@ export const routes: RouteObject[] = [
 	{
 		path: '/test',
 		element: <Test />
-	}
+	},
 	// {
 	// 	path: '/screen-dashboard',
 	// 	element: <ScreenDashboard />
 	// }
+	{
+		path: '/landing',
+		element: <Landing />,
+		children: [
+			{
+				path: 'about',
+				element: <About />
+			},
+			{
+				path: 'squad-situation',
+				element: <SquadSituation />
+			},
+			{
+				path: 'case',
+				element: <Case />
+			}
+		]
+	}
 ];
 const Router = () => useRoutes(routes);
 
