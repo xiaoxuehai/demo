@@ -87,9 +87,9 @@ export function ProjectList() {
 							{item.title}
 						</h2>
 
-						<div className='pt-3 flex gap-x-5'>
-							<div className='w-72 h-72 rounded-md flex-shrink-0 overflow-hidden'>
-								<img src={item.image} className='w-full h-full' />
+						<div className='pt-5 flex gap-x-5'>
+							<div className='w-[420px] rounded-md flex-shrink-0 overflow-hidden'>
+								<img src={item.image} className='w-full' />
 							</div>
 							<p className='italic text-base leading-9'>{item.description}</p>
 						</div>
